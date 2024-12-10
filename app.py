@@ -7,6 +7,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'  # Caminho para 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
+# Criando o banco de dados e as tabelas
+with app.app_context():
+    db.create_all()  # Cria o banco de dados e as tabelas automaticamente
+
 # Modelo do Banco de Dados
 class ViewerTask(db.Model):
     id = db.Column(db.Integer, primary_key=True)
