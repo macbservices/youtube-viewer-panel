@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Visualização do YouTube</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Gerenciador de Visualizações do YouTube</h1>
+    </header>
+
+    <form action="/create" method="POST">
+        <label for="link">Link do YouTube:</label>
+        <input type="text" id="link" name="link" required>
+
+        <label for="instances">Número de Instâncias:</label>
+        <input type="number" id="instances" name="instances" min="1" required>
+
+        <label for="duration">Tempo de Execução (em minutos):</label>
+        <input type="number" id="duration" name="duration" min="1" required>
+
+        <button type="submit">Criar Tarefa</button>
+    </form>
+</body>
+</html>
